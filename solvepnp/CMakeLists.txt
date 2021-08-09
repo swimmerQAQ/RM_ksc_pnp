@@ -1,0 +1,6 @@
+aux_source_directory(. DIR_LIB_SRCS)
+set(LIBRARY_OUTPUT_PATH ${PROJECT_BINARY_DIR}/lib)
+ADD_LIBRARY(pnp ${DIR_LIB_SRCS})
+find_package(OpenCV REQUIRED)
+link_directories(${OpenCV_INCLUDE_DIRS})
+target_link_libraries(pnp ${OpenCV_LIBS})
